@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Context allowCasualMultipartParsing="true">
+	<!-- no content required -->
+	<Parameter name="javax.faces.STATE_SAVING_METHOD" value="client"
+		override="true" />
+</Context>

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui" xmlns:b="http://bootsfaces.net/ui"
+	lang="en">
+
+<f:view>
+
+	<f:metadata>
+		<f:viewAction action="#{testBean.onload}" />
+	</f:metadata>
+
+	<h:head>
+		<title>TARGET</title>
+	</h:head>
+
+	<h:body style="padding-top: 50px; padding-bottom: 50px;">
+
+		<ui:include src="/WEB-INF/include/navbar.xhtml" />
+
+		<!-- <b:modal id="modalDateTimePicker" styleClass="modalDateTimePicker" title="I want to set date in modal">
+			<h:form>
+				<b:dateTimePicker label="date time picker" value="#{testBean.date}" format="DD/MM/YYYY HH:mm:ss" />
+			</h:form>
+		</b:modal> -->
+
+		<b:container>
+
+			<b:panel title="Let's go">
+
+				<!-- <h:form>
+					<b:navCommandLink value="OPEN MODAL" iconAwesome="calendar-o"
+					tooltip="i want to open a modal and change the date and time"
+						oncomplete="$('.modalDateTimePicker').modal('show');">
+						<f:ajax execute="@form" render=":modalDateTimePicker" />
+					</b:navCommandLink>
+				</h:form> -->
+
+				<h:form>
+					<b:well>
+						<h:outputText value="A FORM WHICH ALSO USES DATE TIME PICKER" />
+					</b:well>
+
+					<b:dateTimePicker label="date time picker" value="#{testBean.date}"
+						format="DD/MM/YYYY HH:mm:ss" ajax="true" />
+				</h:form>
+
+			</b:panel>
+
+		</b:container>
+
+	</h:body>
+
+</f:view>
+
+</html>

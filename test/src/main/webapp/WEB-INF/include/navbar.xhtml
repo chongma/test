@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:b="http://bootsfaces.net/ui">
+
+	<b:navBar brand="Test">
+		<b:navbarLinks styleClass="navbar-right">
+			<b:navLink value="Target" outcome="target"
+				tooltip="This is what i wanted to work" icon-awesome="calendar" />
+			<b:navLink value="Modal commented out" outcome="modalDisabled"
+				tooltip="Commenting out the modal allows it to work"
+				icon-awesome="calendar" />
+			<b:navLink value="Primefaces working" outcome="primefacesWorking"
+				tooltip="This version shows that it works with primefaces calendars"
+				icon-awesome="calendar" />
+		</b:navbarLinks>
+	</b:navBar>
+
+</ui:composition>

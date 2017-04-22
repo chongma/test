@@ -23,7 +23,7 @@
 
 		<!-- <b:modal id="modalDateTimePicker" styleClass="modalDateTimePicker" title="I want to set date in modal">
 			<h:form>
-				<b:dateTimePicker label="date time picker" value="#{testBean.date}" format="DD/MM/YYYY HH:mm:ss" />
+				<b:dateTimePicker id="someId" label="date time picker" value="#{testBean.date}" format="DD/MM/YYYY HH:mm:ss" />
 			</h:form>
 		</b:modal> -->
 
@@ -44,8 +44,8 @@
 						<h:outputText value="A FORM WHICH ALSO USES DATE TIME PICKER" />
 					</b:well>
 
-					<b:dateTimePicker label="date time picker" value="#{testBean.date}"
-						format="DD/MM/YYYY HH:mm:ss" ajax="true" />
+					<b:dateTimePicker id="otherId" label="date time picker"
+						value="#{testBean.date}" format="DD/MM/YYYY" />
 				</h:form>
 
 			</b:panel>

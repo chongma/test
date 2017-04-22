@@ -5,16 +5,23 @@
 	xmlns:f="http://xmlns.jcp.org/jsf/core"
 	xmlns:b="http://bootsfaces.net/ui">
 
-	<b:navBar brand="Test">
+	<b:navBar brand="Test" brandHref="index.xhtml">
 		<b:navbarLinks styleClass="navbar-right">
-			<b:navLink value="Target" outcome="target"
-				tooltip="This is what i wanted to work" icon-awesome="calendar" />
-			<b:navLink value="Modal commented out" outcome="modalDisabled"
-				tooltip="Commenting out the modal allows it to work"
-				icon-awesome="calendar" />
-			<b:navLink value="Primefaces working" outcome="primefacesWorking"
-				tooltip="This version shows that it works with primefaces calendars"
-				icon-awesome="calendar" />
+			<b:dropMenu value="Choose test" iconAwesome="birthday-cake">
+				<b:navLink value="Target" outcome="target"
+					tooltip="This is what i wanted to work" icon-awesome="calendar" />
+				<b:navLink value="Modal commented out" outcome="modalDisabled"
+					tooltip="Commenting out the modal allows it to work"
+					icon-awesome="calendar" />
+				<b:navLink value="Primefaces working" outcome="primefacesWorking"
+					tooltip="This version shows that it works with primefaces calendars"
+					icon-awesome="calendar" />
+				<b:navLink value="Select one menu" outcome="selectOne"
+					tooltip="Testing f:afax selectOneMenu behaviour"
+					icon-awesome="calendar" />
+				<b:navLink value="GMap" outcome="gmap"
+					tooltip="GMap inside a collapsed panel" icon-awesome="map" />
+			</b:dropMenu>
 		</b:navbarLinks>
 	</b:navBar>
 

@@ -17,6 +17,10 @@ public class TestItemDao {
 		return testItemList;
 	}
 
+	public TestItem initialise() {
+		return createTestItem(1, "Test item");
+	}
+
 	private TestItem createTestItem(int id, String value) {
 		TestItem testItem = new TestItem();
 		testItem.setId(id);

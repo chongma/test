@@ -3,7 +3,10 @@
 	xmlns:h="http://xmlns.jcp.org/jsf/html"
 	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
 	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
 	xmlns:b="http://bootsfaces.net/ui">
+
+	<c:set var="testArticle" value="#{ta}" scope="request" />
 
 	<h:form>
 		<b:inputText value="#{testArticle.value}" label="Test article" />

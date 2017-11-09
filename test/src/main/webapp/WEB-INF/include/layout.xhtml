@@ -22,9 +22,17 @@
 
 		<ui:include src="navbar.xhtml" />
 
-		<ui:insert name="content">
-			<h:outputText value="MAIN CONTENT" />
-		</ui:insert>
+		<ui:insert name="header" />
+
+		<b:container>
+
+			<h:outputText value="Stage:#{facesContext.application.projectStage}" />
+
+			<ui:insert name="content">
+				<h:outputText value="MAIN CONTENT" />
+			</ui:insert>
+
+		</b:container>
 
 	</h:body>
 

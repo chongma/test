@@ -18,49 +18,43 @@
 
 	<ui:define name="content">
 
-		<b:container>
+		<b:panel title="Let's go">
 
-			<b:panel title="Let's go">
+			<h:form>
 
-				<h:form>
+				<b:well>
+					<h:outputText value="Converter with an h:selectOneMenu" />
+				</b:well>
 
-					<b:well>
-						<h:outputText value="Converter with an h:selectOneMenu" />
-					</b:well>
+				<h:selectOneMenu value="#{converterBean.testItem1}"
+					converter="testItemConverter">
+					<f:selectItems var="testItem" value="#{converterBean.testItemList}"
+						itemValue="#{testItem}" itemLabel="#{testItem.value}" />
+					<f:ajax listener="#{converterBean.ajaxListener}" execute="@this"
+						render="@form" />
+				</h:selectOneMenu>
 
-					<h:selectOneMenu value="#{converterBean.testItem1}"
-						converter="testItemConverter">
-						<f:selectItems var="testItem"
-							value="#{converterBean.testItemList}" itemValue="#{testItem}"
-							itemLabel="#{testItem.value}" />
-						<f:ajax listener="#{converterBean.ajaxListener}" execute="@this"
-							render="@form" />
-					</h:selectOneMenu>
+				<h:outputText
+					value="CURRENT ITEM 1: #{converterBean.testItem1.value}" />
 
-					<h:outputText
-						value="CURRENT ITEM 1: #{converterBean.testItem1.value}" />
+				<b:well>
+					<h:outputText value="Converter with a b:selectOneMenu" />
+				</b:well>
 
-					<b:well>
-						<h:outputText value="Converter with a b:selectOneMenu" />
-					</b:well>
+				<b:selectOneMenu value="#{converterBean.testItem2}"
+					converter="testItemConverter"
+					onchange="ajax:converterBean.onChange()" process="@this"
+					update="@form">
+					<f:selectItems var="testItem" value="#{converterBean.testItemList}"
+						itemValue="#{testItem}" itemLabel="#{testItem.value}" />
+				</b:selectOneMenu>
 
-					<b:selectOneMenu value="#{converterBean.testItem2}"
-						converter="testItemConverter"
-						onchange="ajax:converterBean.onChange()" process="@this"
-						update="@form">
-						<f:selectItems var="testItem"
-							value="#{converterBean.testItemList}" itemValue="#{testItem}"
-							itemLabel="#{testItem.value}" />
-					</b:selectOneMenu>
+				<h:outputText
+					value="CURRENT ITEM 2: #{converterBean.testItem2.value}" />
 
-					<h:outputText
-						value="CURRENT ITEM 2: #{converterBean.testItem2.value}" />
+			</h:form>
 
-				</h:form>
-
-			</b:panel>
-
-		</b:container>
+		</b:panel>
 
 	</ui:define>
 

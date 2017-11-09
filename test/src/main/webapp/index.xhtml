@@ -1,34 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml"
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:h="http://xmlns.jcp.org/jsf/html"
 	xmlns:f="http://xmlns.jcp.org/jsf/core"
 	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
 	xmlns:p="http://primefaces.org/ui" xmlns:b="http://bootsfaces.net/ui"
-	lang="en">
+	template="/WEB-INF/include/layout.xhtml">
 
-<f:view>
+	<ui:define name="metadata">
+		<f:metadata>
+			<f:viewAction action="#{testBean.onload}" />
+		</f:metadata>
+	</ui:define>
 
-	<f:metadata>
-		<f:viewAction action="#{testBean.onload}" />
-	</f:metadata>
+	<ui:define name="title">
+		<h:outputText value="INDEX" />
+	</ui:define>
 
-	<h:head>
-		<title>INDEX</title>
-	</h:head>
-
-	<h:body style="padding-top: 50px; padding-bottom: 50px;">
-
-		<ui:include src="/WEB-INF/include/navbar.xhtml" />
-
+	<ui:define name="header">
 		<b:jumbotron>
 			<b:container>
 				<h:outputText value="This is a test app" />
 			</b:container>
 		</b:jumbotron>
+	</ui:define>
 
-	</h:body>
-
-</f:view>
-
-</html>
+</ui:composition>

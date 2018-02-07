@@ -23,34 +23,53 @@
 			<h:form>
 
 				<b:well>
-					<h:outputText value="Converter with an h:selectOneMenu" />
+					<h2>
+						<h:outputText value="Converter with an h:selectOneMenu" />
+					</h2>
+					<h:selectOneMenu value="#{converterBean.testItem1}"
+						converter="testItemConverter">
+						<f:selectItems var="testItem"
+							value="#{converterBean.testItemList}" itemValue="#{testItem}"
+							itemLabel="#{testItem.value}" />
+						<f:ajax listener="#{converterBean.ajaxListener}" execute="@this"
+							render="@form" />
+					</h:selectOneMenu>
+					<h:outputText
+						value="CURRENT ITEM 1: #{converterBean.testItem1.value}" />
 				</b:well>
-
-				<h:selectOneMenu value="#{converterBean.testItem1}"
-					converter="testItemConverter">
-					<f:selectItems var="testItem" value="#{converterBean.testItemList}"
-						itemValue="#{testItem}" itemLabel="#{testItem.value}" />
-					<f:ajax listener="#{converterBean.ajaxListener}" execute="@this"
-						render="@form" />
-				</h:selectOneMenu>
-
-				<h:outputText
-					value="CURRENT ITEM 1: #{converterBean.testItem1.value}" />
 
 				<b:well>
-					<h:outputText value="Converter with a b:selectOneMenu" />
+					<h2>
+						<h:outputText
+							value="Converter with a b:selectOneMenu (f:ajax listener)" />
+					</h2>
+					<b:selectOneMenu value="#{converterBean.testItem2}">
+						<f:selectItems var="testItem"
+							value="#{converterBean.testItemList}" itemValue="#{testItem}"
+							itemLabel="#{testItem.value}" />
+						<f:converter converterId="testItemConverter" />
+						<f:ajax listener="#{converterBean.ajaxListener}" execute="@this"
+							render="@form" />
+					</b:selectOneMenu>
+					<h:outputText
+						value="CURRENT ITEM 2: #{converterBean.testItem2.value}" />
 				</b:well>
 
-				<b:selectOneMenu value="#{converterBean.testItem2}"
-					converter="testItemConverter"
-					onchange="ajax:converterBean.onChange()" process="@this"
-					update="@form">
-					<f:selectItems var="testItem" value="#{converterBean.testItemList}"
-						itemValue="#{testItem}" itemLabel="#{testItem.value}" />
-				</b:selectOneMenu>
-
-				<h:outputText
-					value="CURRENT ITEM 2: #{converterBean.testItem2.value}" />
+				<b:well>
+					<h2>
+						<h:outputText value="Converter with a b:selectOneMenu (onchange)" />
+					</h2>
+					<b:selectOneMenu value="#{converterBean.testItem3}" ajax="true"
+						onchange="ajax:converterBean.onChange()" process="@this"
+						update="@form">
+						<f:selectItems var="testItem"
+							value="#{converterBean.testItemList}" itemValue="#{testItem}"
+							itemLabel="#{testItem.value}" />
+						<f:converter converterId="testItemConverter" />
+					</b:selectOneMenu>
+					<h:outputText
+						value="CURRENT ITEM 3: #{converterBean.testItem3.value}" />
+				</b:well>
 
 			</h:form>
 

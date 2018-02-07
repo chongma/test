@@ -22,6 +22,7 @@ public class ConverterBean implements Serializable {
 	private List<TestItem> testItemList;
 	private TestItem testItem1;
 	private TestItem testItem2;
+	private TestItem testItem3;
 
 	public String onload() {
 		testItemList = testItemDao.selectTestItemList();
@@ -58,6 +59,14 @@ public class ConverterBean implements Serializable {
 
 	public void setTestItem2(TestItem testItem2) {
 		this.testItem2 = testItem2;
+	}
+
+	public TestItem getTestItem3() {
+		return testItem3;
+	}
+
+	public void setTestItem3(TestItem testItem3) {
+		this.testItem3 = testItem3;
 	}
 
 }
